@@ -2,9 +2,11 @@ require 'spec_helper'
 
 describe 'firefox' do
   it do
+    locale = 'en-US'
+    version = '35.0'
     should contain_class('firefox')
     should contain_package('Firefox').with({
-      :source   => 'http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/32.0/mac/en-US/Firefox%2032.0.dmg',
+      :source   => "https://download.mozilla.org/?product=firefox-${version}-SSL&os=osx&lang=${locale}",
       :provider => 'appdmg'
     })
   end

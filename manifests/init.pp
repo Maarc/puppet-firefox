@@ -3,9 +3,9 @@
 # Examples
 #
 #   include firefox
-class firefox($locale = 'en-US', $version = '32.0'){
+class firefox($locale = 'en-US', $version = '35.0'){
   package { 'Firefox':
-    source   => "http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${version}/mac/${locale}/Firefox%20${version}.dmg",
+    source   => "https://download.mozilla.org/?product=firefox-${version}-SSL&os=osx&lang=${locale}",
     provider => 'appdmg'
   }
 }
